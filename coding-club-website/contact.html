@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Coding Club - IITG</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <canvas class="coding-bg" id="coding-bg"></canvas>
+    <header>
+        <div class="container">
+            <span class="logo">
+                <img src="logo-placeholder.png" alt="Logo">
+                Coding Club, IIT Guwahati
+            </span>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="initiatives.html">Initiatives</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="card">
+            <h2>Contact Us</h2>
+            <p>
+                <i class="fas fa-envelope"></i> <a href="mailto:codingclub@iitg.ac.in">codingclub@iitg.ac.in</a><br>
+                <i class="fas fa-map-marker-alt"></i> IIT Guwahati, Assam, India<br>
+                <i class="fab fa-discord"></i> <a href="https://discord.gg/yourclub" target="_blank">Join our Discord</a>
+            </p>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Coding Club, IIT Guwahati. All rights reserved.</p>
+    </footer>
+    <script src="scripts/coding-bg.js"></script>
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for contacting us! We will get back to you soon.');
+        this.reset();
+    });
+    </script>
+</body>
+</html>
