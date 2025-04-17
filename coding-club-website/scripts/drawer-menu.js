@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.style.overflow = '';
         });
     });
-    // Close drawer on ESC
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             drawer.classList.remove('open');

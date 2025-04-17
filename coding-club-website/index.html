@@ -3,73 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Club - IITG</title>
+    <title>Coding Club - IIT</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <canvas class="coding-bg" id="coding-bg"></canvas>
     <header>
-        <div class="container">
-            <span class="logo">
-                <a href="index.html" id="logo-link">
-                    <img src="logo-placeholder.png" alt="Logo">
-                    Coding Club, IIT Guwahati
-                </a>
-            </span>
-            <div id="drawer-menu-placeholder"></div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="initiatives.html">Initiatives</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Welcome to the Coding Club</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <section class="card">
-            <h2>Welcome to Coding Club, IIT Guwahati</h2>
-            <p>
-                Empowering students to code, collaborate, and innovate. Join our vibrant community for workshops, hackathons, open-source projects, and more!
-            </p>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are a coding club at the Indian Institute of Technology, dedicated to enhancing coding skills and fostering a community of tech enthusiasts.</p>
+        </section>
+        <section id="events">
+            <h2>Upcoming Events</h2>
             <ul>
-                <li>Weekly coding meetups and peer learning sessions</li>
-                <li>Open-source project mentorship</li>
-                <li>Competitive programming and interview prep</li>
-                <li>AI, ML, and Web Development bootcamps</li>
+                <li>Hackathon - Date: TBD</li>
+                <li>Workshop on AI - Date: TBD</li>
+                <li>Weekly Coding Sessions - Every Saturday</li>
             </ul>
+        </section>
+        <section id="resources">
+            <h2>Resources</h2>
+            <p>Access our collection of coding resources, tutorials, and tools to help you improve your skills.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: codingclub@iit.edu</p>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Coding Club, IIT Guwahati. All rights reserved.</p>
+        <p>&copy; 2023 Coding Club, IIT. All rights reserved.</p>
     </footer>
-    <script src="scripts/coding-bg.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const logoLink = document.getElementById('logo-link');
-            // Normalize path for both "/" and "/index.html"
-            const path = window.location.pathname.replace(/\/$/, '');
-            if (path.endsWith('/index.html') || path === '' || path.endsWith('/coding-club-website')) {
-                logoLink.removeAttribute('href');
-                logoLink.style.cursor = 'default';
-                logoLink.addEventListener('click', function(e) { e.preventDefault(); });
-            }
-        });
-    </script>
-    <script>
-        // Load drawer menu HTML and JS
-        fetch('menu.html')
-            .then(res => res.text())
-            .then(html => {
-                document.getElementById('drawer-menu-placeholder').innerHTML = html;
-                const script = document.createElement('script');
-                script.src = 'scripts/drawer-menu.js';
-                document.body.appendChild(script);
-            });
-    </script>
+    <script src="scripts/app.js"></script>
+    <script src="ai-agent/agent.js"></script>
 </body>
 </html>
