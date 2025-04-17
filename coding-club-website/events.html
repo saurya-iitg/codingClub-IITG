@@ -17,6 +17,7 @@
                     Coding Club, IIT Guwahati
                 </a>
             </span>
+            <div id="drawer-menu-placeholder"></div>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -60,6 +61,17 @@
                 logoLink.addEventListener('click', function(e) { e.preventDefault(); });
             }
         });
+    </script>
+    <script>
+        // Load drawer menu HTML and JS
+        fetch('menu.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('drawer-menu-placeholder').innerHTML = html;
+                const script = document.createElement('script');
+                script.src = 'scripts/drawer-menu.js';
+                document.body.appendChild(script);
+            });
     </script>
 </body>
 </html>

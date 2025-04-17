@@ -6,6 +6,88 @@
     <title>Contact | Coding Club - IITG</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex: 1 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        footer {
+            flex-shrink: 0;
+        }
+        .quick-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #e63946 0%, #f1c40f 100%);
+            color: #fff !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            margin: 0.2rem 0.5rem;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(230,57,70,0.08);
+        }
+        .quick-btn:hover {
+            background: linear-gradient(90deg, #f1c40f 0%, #e63946 100%);
+            color: #fff !important;
+            box-shadow: 0 4px 16px rgba(241,196,15,0.15);
+        }
+        /* Responsive nav menu for mobile */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 1.5rem;
+        }
+        @media (max-width: 700px) {
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+                background: rgba(24,28,36,0.98);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100vw;
+                padding: 1rem 1.5rem;
+                z-index: 10;
+                display: none;
+            }
+            nav ul.open {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                color: #fff;
+                font-size: 2rem;
+                margin-left: auto;
+                cursor: pointer;
+                z-index: 20;
+            }
+            header .container {
+                flex-direction: row;
+                align-items: center;
+                position: relative;
+            }
+        }
+        @media (min-width: 701px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <canvas class="coding-bg" id="coding-bg"></canvas>
@@ -17,6 +99,9 @@
                     Coding Club, IIT Guwahati
                 </a>
             </span>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -91,29 +176,20 @@
                     success.style.display = 'block';
                 });
             }
+
+            // Mobile menu toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navUl = document.querySelector('nav ul');
+            menuToggle.addEventListener('click', function() {
+                navUl.classList.toggle('open');
+            });
+            // Close menu when clicking a link (mobile)
+            navUl.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if(window.innerWidth <= 700) navUl.classList.remove('open');
+                });
+            });
         });
     </script>
-    <style>
-        .quick-btn {
-            display: inline-block;
-            background: linear-gradient(90deg, #e63946 0%, #f1c40f 100%);
-            color: #fff !important;
-            padding: 0.6rem 1.2rem;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            margin: 0.2rem 0.5rem;
-            transition: background 0.2s, box-shadow 0.2s;
-            box-shadow: 0 2px 8px rgba(230,57,70,0.08);
-        }
-        .quick-btn:hover {
-            background: linear-gradient(90deg, #f1c40f 0%, #e63946 100%);
-            color: #fff !important;
-            box-shadow: 0 4px 16px rgba(241,196,15,0.15);
-        }
-        @media (max-width:600px) {
-            .card {padding:1rem;}
-        }
-    </style>
 </body>
 </html>
