@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background: rgba(24,28,36,0.98);
+    background: linear-gradient(90deg, #e63946 0%, #f1c40f 100%);
     color: #fff;
     padding: 1.2rem 0 1rem 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
@@ -58,7 +58,19 @@ nav a {
 }
 
 nav a:hover, nav .active {
-    color: #4ea8de;
+    color: #f1c40f;
+}
+
+a {
+    color: #ffb703; /* Vibrant yellow-orange for contrast */
+    text-decoration: underline;
+    transition: color 0.2s;
+    font-weight: 500;
+}
+
+a:hover, a:focus {
+    color: #e63946; /* Red accent on hover for visibility */
+    text-decoration: underline;
 }
 
 main {
@@ -75,11 +87,17 @@ main {
     box-shadow: 0 2px 16px rgba(0,0,0,0.08);
     padding: 2rem;
     margin-bottom: 2rem;
+    border-left: 6px solid #e63946;
+    border-right: 6px solid #f1c40f;
 }
 
 h2 {
     margin-top: 0;
-    color: #4ea8de;
+    background: linear-gradient(90deg, #e63946 40%, #f1c40f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: #e63946;
     font-size: 1.5rem;
 }
 
@@ -103,7 +121,8 @@ ul {
     height: 80px;
     border-radius: 50%;
     margin-bottom: 0.5rem;
-    border: 2px solid #4ea8de;
+    border: 2px solid #f1c40f;
+    box-shadow: 0 0 10px #e6394655;
 }
 
 #contact-form {
@@ -125,7 +144,7 @@ ul {
 }
 
 #contact-form button {
-    background: #4ea8de;
+    background: linear-gradient(90deg, #e63946 0%, #f1c40f 100%);
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -136,13 +155,13 @@ ul {
 }
 
 #contact-form button:hover {
-    background: #22223b;
+    background: linear-gradient(90deg, #f1c40f 0%, #e63946 100%);
 }
 
 footer {
     text-align: center;
     padding: 1.5rem 0;
-    background: rgba(24,28,36,0.98);
+    background: linear-gradient(90deg, #e63946 0%, #f1c40f 100%);
     color: #fff;
     margin-top: 2rem;
     font-size: 1rem;
