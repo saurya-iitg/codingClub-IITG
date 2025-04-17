@@ -12,8 +12,10 @@
     <header>
         <div class="container">
             <span class="logo">
-                <img src="logo-placeholder.png" alt="Logo">
-                Coding Club, IIT Guwahati
+                <a href="index.html" id="logo-link">
+                    <img src="logo-placeholder.png" alt="Logo">
+                    Coding Club, IIT Guwahati
+                </a>
             </span>
             <nav>
                 <ul>
@@ -50,5 +52,17 @@
         <p>&copy; 2024 Coding Club, IIT Guwahati. All rights reserved.</p>
     </footer>
     <script src="scripts/coding-bg.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoLink = document.getElementById('logo-link');
+            // Normalize path for both "/" and "/index.html"
+            const path = window.location.pathname.replace(/\/$/, '');
+            if (path.endsWith('/index.html') || path === '' || path.endsWith('/coding-club-website')) {
+                logoLink.removeAttribute('href');
+                logoLink.style.cursor = 'default';
+                logoLink.addEventListener('click', function(e) { e.preventDefault(); });
+            }
+        });
+    </script>
 </body>
 </html>

@@ -7,6 +7,9 @@ body {
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
+    /* Make sure the background fills the viewport */
+    width: 100vw;
+    box-sizing: border-box;
 }
 
 header {
@@ -74,11 +77,17 @@ a:hover, a:focus {
 }
 
 main {
-    max-width: 900px;
+    max-width: 1200px; /* Increased for large screens */
+    min-width: 320px;
     margin: 2rem auto;
-    padding: 0 1rem;
+    padding: 0 2rem; /* More padding for desktop */
     position: relative;
     z-index: 2;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .card {
@@ -89,6 +98,8 @@ main {
     margin-bottom: 2rem;
     border-left: 6px solid #e63946;
     border-right: 6px solid #f1c40f;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 h2 {
@@ -178,6 +189,16 @@ footer {
     opacity: 0.13;
 }
 
+@media (max-width: 900px) {
+    main {
+        max-width: 98vw;
+        padding: 0 1rem;
+    }
+    .card {
+        padding: 1.2rem;
+    }
+}
+
 @media (max-width: 700px) {
     header .container, main {
         padding: 0 0.5rem;
@@ -185,5 +206,39 @@ footer {
     .team-list {
         flex-direction: column;
         gap: 1rem;
+    }
+    main {
+        margin: 1rem auto;
+        padding: 0 0.3rem;
+    }
+    .card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+    .logo {
+        font-size: 1.2rem;
+    }
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 28px;
+        height: 28px;
+    }
+    h2 {
+        font-size: 1.1rem;
+    }
+    .card {
+        padding: 0.7rem;
     }
 }

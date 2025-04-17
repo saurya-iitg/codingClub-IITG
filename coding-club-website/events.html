@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events | Coding Club - IITG</title>
+    <title>Initiatives | Coding Club - IITG</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,40 +12,54 @@
     <header>
         <div class="container">
             <span class="logo">
-                <img src="logo-placeholder.png" alt="Logo">
-                Coding Club, IIT Guwahati
+                <a href="index.html" id="logo-link">
+                    <img src="logo-placeholder.png" alt="Logo">
+                    Coding Club, IIT Guwahati
+                </a>
             </span>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="initiatives.html">Initiatives</a></li>
-                    <li><a href="events.html" class="active">Events</a></li>
+                    <li><a href="about.html">About</a></li>Events</a></li>
+                    <li><a href="initiatives.html" class="active">Initiatives</a></li>
+                    <li><a href="events.html">Events</a></li>
                     <li><a href="team.html">Team</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <main>
+    <main>/h2>
         <section class="card">
-            <h2>Events & Activities</h2>
+            <h2>Our Initiatives</h2>
             <ul>
                 <li>
-                    <strong>Code in Quarantine:</strong> An 8-week beginner-friendly series covering ML, Competitive Programming, Web Development, and more.
+                    <strong>Internship Preparation Program:</strong> DSA booklets, tech sessions, and alumni mentorship to help students ace their internship season.
                 </li>
                 <li>
-                    <strong>Reflections:</strong> Informal talks and discussions on research, internships, and the breadth of Computer Science.
+                    <strong>Wiki Portal:</strong> A curated collection of tutorials and resources, written by IITG students, to help beginners get started with programming.
                 </li>
                 <li>
-                    <strong>Weekly Coding Meetups:</strong> Peer learning, problem-solving, and project discussions every Saturday.
+                    <strong>Learner's Space:</strong> Summer courses and weekly assignments on topics like Python, Machine Learning, and Web Development.
                 </li>
-            </ul>
-        </section>
+                <li>
+                    <strong>Seasons of Code:</strong> A summer-long open-source project program inspired by GSoC, with mentorship from seniors and alumni.
+                </li>2024 Coding Club, IIT Guwahati. All rights reserved.</p>
+            </ul>r>
+        </section>src="scripts/coding-bg.js"></script>
     </main>
-    <footer>
-        <p>&copy; 2024 Coding Club, IIT Guwahati. All rights reserved.</p>
-    </footer>
-    <script src="scripts/coding-bg.js"></script>
+    <footer>        <p>&copy; 2024 Coding Club, IIT Guwahati. All rights reserved.</p>    </footer>    <script src="scripts/coding-bg.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoLink = document.getElementById('logo-link');
+            // Normalize path for both "/" and "/index.html"
+            const path = window.location.pathname.replace(/\/$/, '');
+            if (path.endsWith('/index.html') || path === '' || path.endsWith('/coding-club-website')) {
+                logoLink.removeAttribute('href');
+                logoLink.style.cursor = 'default';
+                logoLink.addEventListener('click', function(e) { e.preventDefault(); });
+            }
+        });
+    </script>
 </body>
 </html>
