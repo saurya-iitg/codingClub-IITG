@@ -18,20 +18,22 @@
                     Coding Club, IIT Guwahati
                 </a>
             </span>
+            <!-- Drawer menu placeholder for mobile -->
             <div id="drawer-menu-placeholder"></div>
+            <!-- Desktop navigation -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="initiatives.html">Initiatives</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>Events</a></li>
-            <li><a href="initiatives.html" class="active">Initiatives</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    <main>/h2>
+    <main>
         <section class="card">
             <h2>Our Initiatives</h2>
             <ul>
@@ -46,11 +48,14 @@
                 </li>
                 <li>
                     <strong>Seasons of Code:</strong> A summer-long open-source project program inspired by GSoC, with mentorship from seniors and alumni.
-                </li>2024 Coding Club, IIT Guwahati. All rights reserved.</p>
-            </ul>r>
-        </section><script src="scripts/coding-bg.js"></script>
+                </li>
+            </ul>
+        </section>
     </main>
-    <footer>        <p>&copy; 2024 Coding Club, IIT Guwahati. All rights reserved.</p>    </footer>    <script src="scripts/coding-bg.js"></script>
+    <footer>
+        <p>&copy; 2024 Coding Club, IIT Guwahati. All rights reserved.</p>
+    </footer>
+    <script src="scripts/coding-bg.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const logoLink = document.getElementById('logo-link');
@@ -64,7 +69,7 @@
         });
     </script>
     <script>
-        // Load drawer menu HTML and JS
+        // Load drawer menu HTML and JS for mobile
         fetch('menu.html')
             .then(res => res.text())
             .then(html => {
